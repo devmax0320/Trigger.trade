@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+   <head>
+	  <title>My Extension</title>
+	  <link rel="stylesheet" href="css/style.css">
+   </head>
+   <body>
+	  <div class="header" style="width:650px">
+		 <div class="row">
+			<div class="column right"><img src="../images/clive_128.png"></div>
+			<div class="column left">
+			   <h2>Trigger.Trade</h2>
+			   <p>Help keep the Trigger.Trade free! Signup for a ByBit account and get up to <font color="red">$30k Bonus</font><br><a href="https://partner.bybit.com/b/daviddtech" target="_blank">By clicking this link</a></p>
+			   <p>
+				  <span style="padding-left: 5px; padding-right: 5px"><a href="https://www.youtube.com/channel/UC7NJLsf6IonOy8QI8gt5BeA" target="_blank"><i class="fa_icon fa_youtube"></i></a></span>
+				  <span style="padding-left: 5px; padding-right: 5px"><a href="https://discord.gg/3qUPSq7J" target="_blank"><i class="fa_icon fa_discord"></i></a></span>
+				  <span style="padding-left: 5px; padding-right: 5px"><a href="https://daviddtech.medium.com" target="_blank"><i class="fa_icon fa_medium"></i></a></span>
+				  <span style="padding-left: 5px; padding-right: 5px"><a href="https://www.instagram.com/DaviddTech/" target="_blank"><i class="fa_icon fa_instagram"></i></a></span>
+				  <span style="padding-left: 5px; padding-right: 5px"><a href="https://www.patreon.com/daviddtech" target="_blank"><img width="17" height="17" src="../images/patreon.png"></a></span>
+				  <span style="padding-left: 5px; padding-right: 5px"><a href="https://www.tradingview.com/u/daviddtech/" target="_blank"><img width="17" height="17" src="../images/tv.png"></a></span>
+			   </p>
+			</div>
+		 </div>
+	  </div>
+	  <!-- Create the tabs -->
+	  <form method="POST" class="bots_importer_form" id="form">
+		 <input type="hidden" name="version" value="11">
+		 <div class="tabs">
+			<div class="tabs__links" >
+			   <a href="#content-1" class="tabs__link tabs__link--active:target">Welcome</a>
+			   <a href="#content-2" class="tabs__link">Exchange Settings</a>
+			   <a href="#content-3" class="tabs__link">Trade Settings</a>
+			   <a href="#content-4" class="tabs__link">Advanced Settings</a>
+			</div>
+			
+			
+			
+			
+			
+			
+			<div id="content-1" class="content-popup">
+			   <div class="main-container-secondline box-shadow">
+				  
+				  <hr class="dotted-line" style="margin-top: 30px;" />
+				  <h3 class="title"> Welcome to Trigger.Trade</h3>
+				  <div class="alert alert-warning" role="alert">
+					 Don't have a ByBit Account? Create an account <a
+						href="https://partner.bybit.com/b/daviddtech">here</a> and get free bonuses and
+					 save on fees.
+					 <a href="https://partner.bybit.com/b/daviddtech">Create a ByBit Account</a>
+				  </div>
+				  
+				  <div class="content" style="text-align: center">
+					  <p style="color:rgb(21, 140, 21)">NOTE : On install or after update you will need to refresh TV charts (<b>twice</b>).</p>
+					  <a href="https://www.youtube.com/@DaviddTech/videos" target="_blank"><img src="../images/youtube.png"></a><br>
+					  <a href="https://www.youtube.com/@DaviddTech/videos" target="_blank">Watch the GETTING STARTED Video</a>
+					  <p><strong>What is the Optimiser?</strong><br>
+						  The optimiser is a Chrome Extension made to optimise your trading strategies. <br>
+					  </p><p><strong>Come join the us</strong><br>
+					  </p><ul style="text-align: left">
+						  <li><mark style="color:black"><a href="https://trigger.trade/" target="_blank" style="color:red!important">The Optimiser</a> Optimise any TradingView Strategy.</mark>
+						  </li><li><a href="https://www.patreon.com/daviddtech" target="_blank">Patreon</a> Get Access to my
+							  strategies, group and more.
+						  </li><li><a href="https://www.youtube.com/channel/UC7NJLsf6IonOy8QI8gt5BeA" target="_blank">YouTube</a> Watch us backtest strategies.
+						  </li><li><a href="https://discord.gg/3qUPSq7J" target="_blank">Discord</a> Join other awesome members
+							  and access our collection of backtest results.
+					  </li></ul>
+					  <p></p>
+				  </div>
+				  
+				  
+				  
+			   </div>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<div id="content-2" class="content-popup">
+			   <h2>Please enter your API Key & Secret Below</h2>
+			   <p></p>
+			   <input type="hidden" name="version" value="">
+			   <h3 class="title">Exchange API</h3>
+			   <hr class="dotted-line" />
+			   <label class="label">
+				  <div class="switch-field">
+					 <input type="radio" class="data" id="radio-three-usd" name="inverse" value="1" />
+			   <label for="radio-three-usd">Inverse</label>
+			   <input type="radio" class="data" id="radio-four-usd" name="inverse" value="2" checked />
+			   <label for="radio-four-usd">USDT Perpetual</label>
+			   <input type="radio" class="data" id="radio-four-spot" name="inverse" value="0" />
+			   <label class="last-child" for="radio-four-spot">SPOT</label>
+			   </div>
+			   </label>
+			   <br />
+			   <label class="label">
+				  Bybit Account Type:
+				  <div class="switch-field">
+					 <input type="radio" class="data" id="radio-three" name="use_testnet"
+						value="1" />
+			   <label for="radio-three">Testnet</label>
+			   <input type="radio" class="data" id="radio-four" name="use_testnet" value="0"
+				  checked />
+			   <label for="radio-four">Mainnet</label>
+			   </div>
+			   </label>
+			   <br />
+			   <label class="label">
+			   <b>API Key:</b>
+			   <input class="input data" name="api_key" type="password"
+				  placeholder="Bybit API key" value="" autocomplete="on" />
+			   </label>
+			   <label class="label">
+				  Secret Key:
+				  <input class="input data" name="secret_key" type="password"
+					 placeholder="Bybit Secret key" value="" /> -
+				  <div class="tooltip22"><i class="fa fa-question-circle" aria-hidden="true"></i>
+					 <span class="tooltiptext"> We do not store any API codes on our server.
+					 Generate the API key and Secret on the ByBit WebSite </span> <br>
+				  </div>
+				  <br> <br> <a href="https://partner.bybit.com/b/daviddtech">Get my API keys</a>
+			   </label>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<div id="content-3"  class="content-popup">
+			   <h2>Tab 3 Csontent</h2>
+			   <p>This is the content for Tab 3.</p>
+			   
+			   
+			   
+			   <div class="main-container-secondline box-shadow">
+				  <h3>Entry & Exit</h3>
+				  <hr class="dotted-line" />
+				  <input class="input data" id="coin_pair" name="coin_pair" type="hidden"
+					 value="BTCUSDT" />
+				  <input class="input data" id="tp_type" name="tp_type" type="hidden" value="1" />
+				  <div class="control">
+					 <label class="label">
+						Entry Order Type:
+						<div class="switch-field">
+						   <input type="radio" class="data" id="radio-5" name="entry_order_type"
+							  value="0" />
+					 <label for="radio-5">Market Order</label>
+					 <input type="radio" class="data" id="radio-6" name="entry_order_type"
+						value="1" checked />
+					 <label for="radio-6">Limit Order</label>
+					 </div>
+					 </label>
+				  </div>
+				  <div class="control">
+					 <label class="label">
+						Exit Order Type:
+						<div class="switch-field">
+						   <input type="radio" class="data" id="radio-7" name="exit_order_type"
+							  value="0" />
+					 <label for="radio-7">Market Order</label>
+					 <input type="radio" class="data" id="radio-8" name="exit_order_type"
+						value="1" checked />
+					 <label for="radio-8">Limit Order</label>
+					 </div>
+					 </label>
+				  </div>
+				  <div class="control">
+					 <label class="label">
+						Last Take Profit as Conditional (SAFE_MODE):
+						<div class="tooltip22"><i class="fa fa-question-circle"
+						   aria-hidden="true"></i>
+						   <span class="tooltiptext"> This generates a market conditional order which
+						   is placed at the last take profit. It is just a safe way of ensuring
+						   your take profit is set. </span>
+						</div>
+						<div class="switch-field">
+						   <input type="radio" class="data" id="radio-22" name="force_tp" value="0" />
+					 <label for="radio-22">OFF</label>
+					 <input type="radio" class="data" id="radio-23" name="force_tp" value="1"
+						checked />
+					 <label for="radio-23">ON</label>
+					 </div>
+					 </label>
+				  </div>
+			  
+			</div>
+			<br />
+			<div class="control">
+			   <div class=" main-container-secondline box-shadow">
+				  <h3>Margin Mode:</h3>
+				  <hr class="dotted-line" />
+				  <div class="switch-field">
+					 <input type="radio" class="data" id="radio-9" name="margin_mode" value="0" />
+					 <label for="radio-9">Cross</label>
+					 <input type="radio" class="data" id="radio-10" name="margin_mode" value="1"
+						checked />
+					 <label for="radio-10">Isolated</label>
+				  </div>
+			   </div>
+			   <br />
+			   <div class="main-container-secondline box-shadow">
+				  <h3>Trading Amount</h3>
+				  <hr class="dotted-line" />
+				  Use a percent of the portfolio in percentage or amount in USDT?<br>
+				  <div class="switch-field">
+					 <input type="radio" class="data" id="radio-11s" name="qty_in_percentage"
+						value="0" />
+					 <label for="radio-11s">Use Absolute Value</label>
+					 <input type="radio" class="data" id="radio-11" name="qty_in_percentage"
+						value="1" />
+					 <label for="radio-11">Percentage of Balance</label>
+					 <input type="radio" class="data" id="radio-12" name="qty_in_percentage" value="2"
+						checked />
+					 <label for="radio-12">Fixed Amount (USDT)</label>
+				  </div>
+				  </label>
+				  <br>
+				  <div class="perusd">USDT Amount:</div>
+				  <div class="slidecontainer" id="percentPort_slider" style="display:none">
+					 <input type="range" min="1" max="100" step="0.1" value="10" class="slider"
+						name="percentPort" id="percentPort">
+				  </div>
+				  <input class="input data" id="PercentPortval" name="qty" type="number"
+					 style="width: 30%;" value="Amount" placeholder="Enter USDT Amount here" />
+				  <span id="percentPort_percent_sign" style="display:none">
+					 %
+					 <div class="tooltip22"><i class="fa fa-question-circle" aria-hidden="true"></i>
+						<span class="tooltiptext">If you use this option a percentage of your wallet
+						will be used. Please ensure you are using less than 100% as fees and second
+						pairs trades may fail.</span>
+					 </div>
+				  </span>
+				  </label>
+			   </div>
+			   <br>
+			   <div class="main-container-secondline box-shadow">
+				  <h3>Leverage</h3>
+				  <hr class="dotted-line" />
+				  <label class="label">
+					 Long Leverage(1-125x):
+					 <div class="slidecontainer" style="">
+						<input type="range" min="1" max="125" value="50" class="slider"
+						   name="leverageLONG" id="myLeverageRange">
+						<span id="myLeverageOutput_long">50</span>
+					 </div>
+					 <input class="input data" style="width: 30%;" name="buy_leverage"
+						id="buy_leverage" type="number" value="50" maxlength="3" size="3" />
+					 <br />
+					 <br />
+				  </label>
+				  <label class="label">
+					 Short Leverage(1-125x):
+					 <div class="slidecontainer" style="">
+						<input type="range" min="1" max="125" value="50" class="slider"
+						   name="leverageSHORT" id="myLeverageRange_short">
+						<span id="myLeverageOutput_short">50</span>
+					 </div>
+					 <input class="input data" style="width: 30%;" name="sell_leverage"
+						id="sell_leverage" type="number" value="50" maxlength="3" size="3" />
+				  </label>
+			   </div>
+			   <br />
+			   <div class="main-container-secondline box-shadow">
+				  <h3>Stop Loss</h3>
+				  <hr class="dotted-line" />
+				  <div class="switch-field">
+					 <input type="radio" class="data" id="radio-22-sl" name="use_stoploss" value="0"
+						checked />
+					 <label for="radio-22-sl">OFF</label>
+					 <input type="radio" class="data" id="radio-23-sl" name="use_stoploss"
+						value="1" />
+					 <label for="radio-23-sl">ON</label>
+				  </div>
+				  <label class="label stoploss" style="display:none">
+					 Stop Loss %:
+					 <div class="slidecontainer" style="">
+						<input type="range" min="1" max="100" step="0.1" value="5" class="slider"
+						   name="long_stop_loss_percent_range" id="long_stop_loss_percent_range">
+					 </div>
+					 <input class="input data" name="stop_loss_price" type="text"
+						id="long_stop_loss_percent" placeholder="5" /> %
+				  </label>
+				  <label class="label stopl" style="display:none">
+					 <br />
+					 Stop Loss SHORT %:
+					 <div class="slidecontainer" style="">
+						<input type="range" min="1" max="100" value="5" step="0.1" class="slider"
+						   name="short_stop_loss_percent_range" id="short_stop_loss_percent_range">
+					 </div>
+				  </label>
+			   </div>
+			   <br />
+			   <div class="main-container-secondline box-shadow">
+				  <h3>Final Take Profit</h3>
+				  <hr class="dotted-line" />
+				  <div class="switch-field">
+					 <input type="radio" class="data" id="radio-22-tp" name="use_takeprofit" value="0"
+						checked />
+					 <label for="radio-22-tp">OFF</label>
+					 <input type="radio" class="data" id="radio-23-tp" name="use_takeprofit"
+						value="1" />
+					 <label for="radio-23-tp">ON</label>
+				  </div>
+				  <label class="label takeprofit" style="display:none">
+					 Take Profit %:
+					 <div class="slidecontainer" style="">
+						<input type="range" min="1" max="500" value="5" step="0.1" class="slider"
+						   name="long_take_profit_percent_range" id="long_take_profit_percent_range">
+					 </div>
+					 <input class="input data" name="tp_3_size" type="hidden" maxlength="3" size="3"
+						placeholder="Position Size %" value="100">
+					 <input class="input data" name="tp_3_price" id="long_take_profit_percent"
+						type="text" placeholder="5" /> %
+				  </label>
+				  <label class="label takepro" style="display:none">
+					 Take Profit %:
+					 <div class="slidecontainer" style="">
+						<input type="range" min="1" max="500" value="5" step="0.1" class="slider"
+						   name="short_take_profit_percent_range" id="short_take_profit_percentrange">
+					 </div>
+				  </label>
+			   </div>
+			   <br />
+			   
+			  
+			   <div class="main-container-secondline box-shadow">
+				  <h3>Multi Take Profit</h3>
+				  <hr class="dotted-line" />
+				  <div class="switch-field">
+					 <input class="data" id="enable_multi_tp_1" type="radio" name="enable_multi_tp"
+						value="1" onchange="showMultiTp()" />
+					 <label class="start-child" for="enable_multi_tp_1">ON</label>
+					 <input class="data" checked type="radio" id="enable_multi_tp_0"
+						name="enable_multi_tp" value="0" onchange="hideMultiTp()" />
+					 <label class="last-child" for="enable_multi_tp_0">OFF</label>
+				  </div>
+				  <div id="mp" style="display:none">
+					 <label class="label" id="multi_tp_settings">
+						<h4><input type="checkbox" class="tp1" onclick="toggletp1()"> Take Profit 1:
+						</h4>
+						<div id="tp1_div" style="display:none;">
+						   <div class="custom-responsive">
+							  <div class=""><b>Position Size %: </b><input class="input data"
+								 type="number" name="tp_1_size" style="width:50%" maxlength="3"
+								 size="3" placeholder="Position Size %" value="">
+								 <br>
+							  </div>
+							  <div class=""><b>Take Profit %: </b><input class="input data"
+								 type="number" name="tp_1_price" style="width:50%" maxlength="3"
+								 size="3" placeholder="Take Profit %" value="">
+								 <br>
+							  </div>
+						   </div>
+						</div>
+					 </label>
+					 <label class="label" id="multi_tp_settings_2">
+						<h4><input type="checkbox" class="tp2" onclick="toggletp2()"> Take Profit 2:
+						</h4>
+						<div id="tp2_div" style="display:none;">
+						   <div class="custom-responsive">
+							  <div class=""><b>Position Size %: </b><input class="input data"
+								 name="tp_2_size" type="number" style="width:50%" maxlength="3"
+								 size="3" placeholder="Position Size %" value="">
+								 <br>
+							  </div>
+							  <div class=""><b>Take Profit %: </b><input class="input data"
+								 name="tp_2_price" type="number" style="width:50%" maxlength="3"
+								 size="3" placeholder="Take Profit %" value="">
+							  </div>
+						   </div>
+						   <br><br>
+						</div>
+					 </label>
+					 <label class="label" id="multi_tp_settings_3" style="display:none;">
+						<h4><input type="checkbox" class="tp3" onclick="toggletp3()"> Take Profit 3:
+						</h4>
+						<div id="tp3_div_" style="display:none;">
+						   <div class="row-ss">
+							  <div class="column-ss">
+								 <br><br>
+							  </div>
+							  <div class="column-ss"><input class="input data" name=""
+								 style="width:50%" maxlength="3" size="3"
+								 placeholder="Take Profit %" value="">
+								 <br><br>
+							  </div>
+					 </label>
+					 </div>
+					 </div>
+				  </div>
+				  </label>
+			   </div>
+			   <br />
+			</div>
+			
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<div id="content-4"  class="content-popup">
+			   <h2>Tab 4 Content</h2>
+			   <p>This is the content for Tab 4.</p>
+			   <div class="main-container-secondline box-shadow">
+				  <h3>Activate Encryptor</h3>
+				  <hr class="dotted-line" />
+				  <label class="radio">
+					 For an extra layer of security activate the encryptor. You must encrypt your API <a
+						href="/wp-admin/admin.php?page=encrypto-page" target="new">here</a> first.
+					 <div class="switch-field">
+						<input type="radio" class="data" id="radio-22-encryptor" name="encryptor" value="0"
+						   checked />
+				  <label for="radio-22-encryptor">OFF</label>
+				  <input type="radio" class="data" id="radio-23-encryptor" name="encryptor"
+					 value="1" />
+				  <label for="radio-23-encryptor">ON</label>
+				  </div>
+				  </label>
+			   </div>
+			   <div class="main-container-secondline box-shadow">
+				  <h3>Advanced MODE</h3>
+				  <hr class="dotted-line" />
+				  <label class="radio">
+				  <input class="data" type="radio" name="advanced_mode" onclick="hideadvance()" value="1" />
+				  Hide
+				  </label>
+				  <label class="radio">
+				  <input class="data" checked type="radio" name="advanced_mode" onclick="showadvance()"
+					 value="0" />
+				  Show
+				  </label>
+				  <div class="advanced" style="">
+					 <label class="label">
+					 Stop trade if balance(USDT) is below:
+					 <input class="input data" name="stop_bot_below_balance" type="number" placeholder="" />
+					 </label>
+					 <br />
+					 <h4> Cancel order if not fulfilled within</h4>
+					 Depending on the Coin pair orders ALTcoins may take longer to fill.<br>
+					 <div class="switch-field">
+						<input class="data" id="order_time_out_10" type="radio" name="order_time_out"
+						   value="10" />
+						<label class="last-child" for="order_time_out_10">10 (sec)</label>
+						<input class="data" id="order_time_out_20" type="radio" name="order_time_out"
+						   value="20" />
+						<label class="last-child" for="order_time_out_20">20 (sec)</label>
+						<input class="data" id="order_time_out_30" type="radio" name="order_time_out"
+						   value="30" />
+						<label class="last-child" for="order_time_out_30">30 (sec)</label>
+						<input class="data" id="order_time_out_60" type="radio" name="order_time_out"
+						   value="60" />
+						<label class="start-child" for="order_time_out_60">60 (sec)</label>
+						<input class="data" id="order_time_out_240" type="radio" name="order_time_out"
+						   value="240" checked />
+						<label class="last-child" for="order_time_out_240">240 (sec)</label>
+					 </div>
+					 <br />
+					 <div class="control">
+						<h4>Close existing open positions</h4>
+						<div class="switch-field">
+						   <input class="data" type="radio" id="exit_existing_trade_1"
+							  name="exit_existing_trade" value="1" />
+						   <label class="start-child" for="exit_existing_trade_1">ON</label>
+						   <input class="data" checked type="radio" id="exit_existing_trade_0"
+							  name="exit_existing_trade" value="0" />
+						   <label class="last-child" for="exit_existing_trade_0">OFF</label>
+						</div>
+					 </div>
+				  </div>
+			   </div>
+			   <br />
+			   <div class="main-container-secondline box-shadow">
+				  <h3>DCA MESH</h3>
+				  <hr class="dotted-line" />
+				  <div class="switch-field">
+					 <input type="radio" class="data" id="radio-90-tp" name="dca" value="0" checked />
+					 <label for="radio-90-tp">OFF</label>
+					 <input type="radio" class="data" id="radio-91-tp" name="dca" value="1" />
+					 <label for="radio-91-tp">ON</label>
+				  </div>
+				  <br />
+				  <b>DCA RANGE:</b>
+				  <input class="input data" name="dca_range" type="text" value="" autocomplete="on" />
+				  <div class="tooltip22"><i class="fa fa-question-circle" aria-hidden="true"></i>
+					 <span class="tooltiptext"> You can build an order mesh to catch wicks or to DCA. Define in
+					 %. From entry/ 1st order and number of trades </span> <br>
+				  </div>
+				  <label class="label">
+				  Number of trade:
+				  <input class="input data" name="dca_orders" type="text" value="" /> -
+				  </label>
+			   </div>
+			   <br>
+			   <div class="control main-container-secondline box-shadow">
+				  <h4>Prevent Pyramiding:</h4>
+				  <hr class="dotted-line" />
+				  <label class="radio">
+					 <div class="switch-field">
+						<input type="radio" class="data" id="radio-47-tp" name="pyramiding" value="0"
+						   checked />
+				  <label for="radio-47-tp">OFF</label>
+				  <input type="radio" class="data" id="radio-48-tp" name="pyramiding" value="1" />
+				  <label for="radio-48-tp">ON</label>
+				  </div>
+				  </label>
+				  <h4>Conditionnal Pyramiding</h4>
+				  <div class="switch-field">
+					 <input type="radio" class="data" id="radio-47-tp" name="con_pyramiding" value="0"
+						checked />
+					 <label for="radio-47-tp">OFF</label>
+					 <input type="radio" class="data" id="radio-48-tp" name="con_pyramiding" value="1" />
+					 <label for="radio-48-tp">ON</label>
+				  </div>
+				  <br />
+				  <label class="con_threshold">
+				  USDT HOLD MAX:
+				  <input class="input data" name="con_threshold" type="number" maxlength="3" size="3"
+					 value="">
+				  </label>
+				  <br />
+				  <br />
+				  <label class="label">
+				  E-Mail:
+				  <input class="input data" name="email_id" type="text" value="dave@app-developers.biz" disabled />
+				  </label>
+				  <br />
+				  <br />
+				  <label class="label">
+				  Telegram Channel ID :
+				  <input class="input data" name="channelName" type="number"
+					 placeholder="Input your Telegram Channel ID" />
+				  </label>
+				  <br />
+				  <br />
+				  <label class="label">
+					 Telegram Alert
+					 <br />
+					 <div class="switch-field custom-responsive-raido-group">
+						<input type="radio" class="data" id="radio-26-tg_0" name="telegram_bot" value="0"
+						   checked />
+				  <label for="radio-26-tg_0">All</label>
+				  <input type="radio" class="data" id="radio-23-encryptor_1" name="telegram_bot"
+					 value="1" />
+				  <label for="radio-23-encryptor_1">Errors Only</label>
+				  <input type="radio" class="data" id="radio-23-encryptor_3" name="telegram_bot"
+					 value="3" />
+				  <label for="radio-23-encryptor_3">Successfull trade</label>
+				  <input type="radio" class="data" id="radio-23-encryptor_2" name="telegram_bot"
+					 value="2" />
+				  <label for="radio-23-encryptor_2">Notifications Only (Manual Trader)</label>
+				  </div>
+				  <br />
+				  <br />
+				  <br />
+				  <div class="alert alert-warning" role="alert">
+					 Telegram Setup :
+					 <a href="https://t.me/DaviddTechAPIbot">@DaviddTechAPIbot</a> - Add this bot as a
+					 friend.
+					 <br />
+					 <a href="https://t.me/userinfobot">@userinfobot</a> - send /start to this bot and you
+					 will receive the channel ID you need above
+				  </div>
+				  <br />
+				  <br />
+				  <label class="label">
+				  Comment (Optional):
+				  <input class="input data" type="text" name="comment" placeholder="Add a comment" />
+				  </label>
+				  <br />
+			   </div>
+			</div>
+		 </div>
+		 </div>
+	  </form>
+	  <!-- Load jQuery from a CDN -->
+	  <script src="content_scripts/jquery-3.6.0.min.js"></script>
+	  <script src="content_scripts/form.js"></script>
+	  <script src="popup.js"></script>
+   </body>
+</html>
