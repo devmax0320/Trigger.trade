@@ -5,48 +5,48 @@ var checkExist = setInterval(function() {
 	if (tickerButton) {
 		clearInterval(checkExist);
 		// Create the main content element and set its styles
-		var mainContent = document.createElement("div");                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-		mainContent.id = "main-content-trigger-trade";
-		mainContent.style.position = "absolute";
-		mainContent.style.top = "50px";
-		mainContent.style.left = "50px";
-		mainContent.style.width = "350px";
-		mainContent.style.height = "140px";
-		mainContent.style.backgroundColor = "#000";
-		mainContent.style.color = "#fff";
-		mainContent.style.fontFamily = "Arial, sans-serif";
-		mainContent.style.fontSize = "14px";
-		mainContent.style.cursor = "move";
-		// Set the HTML content of the main content element using a string
-		mainContent.innerHTML = `
-			<div id="my-extension-toolbar" style="position: absolute; top: 0; left: 0; width: 100%; height: 30px; background-color: #000; box-sizing: border-box;">
-				<div style="float: left; padding: 5px;">Trigger.Trade - Market Order</div>
-				<div id="minimize-icon" style="float: right; padding: 5px; cursor: pointer;">-</div>
-				<div id="maximize-icon2" style="float: right; padding: 5px; cursor: pointer; display: none;">+</div>
-			</div>
-			<div id="my-extension-div" style="position: absolute; top: 30px; left: 0; width: 100%; height: 100px; background-color: #000; cursor: move; box-sizing: border-box; padding: 10px;">
-				<div style="display: flex;">
-				<button id="long-button" onclick="alert('You clicked the LONG button!');" style="height:93px;flex: 1; background-color: green; color: #fff; border: none; padding: 10px; margin-right: 10px; cursor: pointer;">LONG</button>
-				<div style="flex: 1; margin: 0 10px;font-size: 13px;"><center><b>Trade Amount</b> <br><span id="trade-amount">0</span> USDT<br><b>Leverage</b> <br>  <span id="long-leverage">0</span> | <span id="short-leverage">0</span></center></div>
-				<button id="short-button" onclick="alert('You clicked the SHORT button!');" style="height:93px;flex: 1; background-color: red; color: #fff; border: none; padding: 10px; cursor: pointer;">SHORT</button>
-				</div>
-			</div>
-			`;
+		// var mainContent = document.createElement("div");                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+		// mainContent.id = "main-content-trigger-trade";
+		// mainContent.style.position = "absolute";
+		// mainContent.style.top = "50px";
+		// mainContent.style.left = "50px";
+		// mainContent.style.width = "350px";
+		// mainContent.style.height = "140px";
+		// mainContent.style.backgroundColor = "#000";
+		// mainContent.style.color = "#fff";
+		// mainContent.style.fontFamily = "Arial, sans-serif";
+		// mainContent.style.fontSize = "14px";
+		// mainContent.style.cursor = "move";
+		// // Set the HTML content of the main content element using a string
+		// mainContent.innerHTML = `
+		// 	<div id="my-extension-toolbar" style="position: absolute; top: 0; left: 0; width: 100%; height: 30px; background-color: #000; box-sizing: border-box;">
+		// 		<div style="float: left; padding: 5px;">Trigger.Trade - Market Order</div>
+		// 		<div id="minimize-icon" style="float: right; padding: 5px; cursor: pointer;">-</div>
+		// 		<div id="maximize-icon2" style="float: right; padding: 5px; cursor: pointer; display: none;">+</div>
+		// 	</div>
+		// 	<div id="my-extension-div" style="position: absolute; top: 30px; left: 0; width: 100%; height: 100px; background-color: #000; cursor: move; box-sizing: border-box; padding: 10px;">
+		// 		<div style="display: flex;">
+		// 		<button id="long-button" onclick="alert('You clicked the LONG button!');" style="height:93px;flex: 1; background-color: green; color: #fff; border: none; padding: 10px; margin-right: 10px; cursor: pointer;">LONG</button>
+		// 		<div style="flex: 1; margin: 0 10px;font-size: 13px;"><center><b>Trade Amount</b> <br><span id="trade-amount">0</span> USDT<br><b>Leverage</b> <br>  <span id="long-leverage">0</span> | <span id="short-leverage">0</span></center></div>
+		// 		<button id="short-button" onclick="alert('You clicked the SHORT button!');" style="height:93px;flex: 1; background-color: red; color: #fff; border: none; padding: 10px; cursor: pointer;">SHORT</button>
+		// 		</div>
+		// 	</div>
+		// 	`;
 
 
-		// Get the stored position value or set a default value
-		chrome.storage.local.get({ position: { x: 50, y: 50 } }, function(data) {
-			mainContent.style.top = data.position.y + "px";
-			mainContent.style.left = data.position.x + "px";
-		});
+		// // Get the stored position value or set a default value
+		// chrome.storage.local.get({ position: { x: 50, y: 50 } }, function(data) {
+		// 	mainContent.style.top = data.position.y + "px";
+		// 	mainContent.style.left = data.position.x + "px";
+		// });
 
 		
 		// Append the main content element to the chart container
-		var chartContainer = document.querySelector(".chart-page");
-		chartContainer.appendChild(mainContent);
-		insertNewButton();
+		//var chartContainer = document.querySelector(".chart-page");
+		//chartContainer.appendChild(mainContent);
 		// Make the main content element draggable
-		dragElement(mainContent);
+		//dragElement(mainContent);
+		insertNewButton();
 	}
 }, 100);
 
