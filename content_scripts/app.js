@@ -2,6 +2,8 @@
 var checkExist = setInterval(function() {
 	var tickerButton = document.querySelector('#header-toolbar-symbol-search div[class*="text-"]');	
 
+	insertNewButton();
+	insertNewPanel();
 	if (tickerButton) {
 		clearInterval(checkExist);
 		// Create the main content element and set its styles
@@ -46,7 +48,7 @@ var checkExist = setInterval(function() {
 		//chartContainer.appendChild(mainContent);
 		// Make the main content element draggable
 		//dragElement(mainContent);
-		insertNewButton();
+		//insertNewButton();
 	}
 }, 100);
 
@@ -73,11 +75,43 @@ function insertNewButton() {
 		<div class="hoverMask-I_wb5FjE"></div>
 		<span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44" height="44"><path fill="currentColor" d="M13 11h18a2 2 0 0 1 2 2v17a2 2 0 0 1-2 2H13a2 2 0 0 1-2-2V13c0-1.1.9-2 2-2Zm18-1H13a3 3 0 0 0-3 3v17a3 3 0 0 0 3 3h18a3 3 0 0 0 3-3V13a3 3 0 0 0-3-3Zm-2 11H15v1h14v-1Zm-14-5h14v1H15v-1Zm14 10H15v1h14v-1Z"></path></svg></span>
 	`;
-	// showPanelButton.innerHTML = `
-	// 	<button aria-label="Watchlist, details and news" type="button" class="button-I_wb5FjE isActive-I_wb5FjE apply-common-tooltip common-tooltip-vertical accessible-I_wb5FjE" data-name="base" aria-pressed="true" data-tooltip="Watchlist, details and news" tabindex="-1"><div class="hoverMask-I_wb5FjE"></div><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44" height="44"><path fill="currentColor" d="M13 11h18a2 2 0 0 1 2 2v17a2 2 0 0 1-2 2H13a2 2 0 0 1-2-2V13c0-1.1.9-2 2-2Zm18-1H13a3 3 0 0 0-3 3v17a3 3 0 0 0 3 3h18a3 3 0 0 0 3-3V13a3 3 0 0 0-3-3Zm-2 11H15v1h14v-1Zm-14-5h14v1H15v-1Zm14 10H15v1h14v-1Z"></path></svg></span></button>
-	// `;
 	righttoolbar.insertBefore(showPanelButton, righttoolbar.firstChild);
+	showPanelButton.addEventListener("click", function() {
+		var floatingpanel = document.querySelector("body > div.js-rootresizer__contents.layout-with-border-radius > div.layout__area--right > div > div.widgetbar-pages > div.widgetbar-pagescontent");	
+		if (floatingpanel.firstChild.className.includes("active"))
+			{ floatingpanel.firstChild.classList.remove("active"); console.log("123"); }
+		else
+			{ floatingpanel.firstChild.classList.add("active"); console.log("456"); }
+	});
 	//righttoolbar.appendChild(showPanelButton);
+}
+
+function insertNewPanel() {
+	var floatingpanel = document.querySelector("body > div.js-rootresizer__contents.layout-with-border-radius > div.layout__area--right > div > div.widgetbar-pages > div.widgetbar-pagescontent");
+	var mainContent = document.createElement("div");
+	mainContent.classList.add("widgetbar-page");
+	mainContent.innerHTML = `
+		<div>
+			<h1>Choose Accounts	</h1>
+		</div>
+		<div class="widget-X9EuSe_t widgetbar-widget widgetbar-widget-alerts_manage">
+			<div class="widgetHeader-X9EuSe_t">
+				<span>Market</span>
+				<input></input>
+				<div>
+					<button>Buy</button>
+					<button>Sell</button>
+				</div>
+			</div>
+			<div class="widgetbar-widgetbody" style="height: 411px;"></div>
+			<div class="widgetbar-widgethandle" style="touch-action: none;"></div>
+		</div>
+		<div class="widget-X9EuSe_t widgetbar-widget widgetbar-widget-alerts_log">
+			<div class="widgetHeader-X9EuSe_t"></div><div class="widgetbar-widgetbody" style="height: 410px;"></div>
+			<div class="widgetbar-widgethandle" style="touch-action: none;"></div>
+		</div>
+	`;
+	floatingpanel.insertBefore(mainContent, floatingpanel.firstChild);
 }
 
 function dragElement(element) {
