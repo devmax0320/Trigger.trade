@@ -1,4 +1,19 @@
 // Wait for the chart container to appear on the page
+// Create a <link> element to link your CSS file
+var link = document.createElement("link");
+link.rel = "stylesheet";
+link.type = "text/css";
+link.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"; // Replace with the actual path to your CSS file
+
+var link1 = document.createElement("link");
+link1.rel = "stylesheet";
+link1.type = "text/css";
+link1.href = "app.css"; // Replace with the actual path to your CSS file
+
+
+// Append the <link> element to the document's <head> section
+document.head.appendChild(link);
+
 var checkExist = setInterval(function() {
 	var tickerButton = document.querySelector('#header-toolbar-symbol-search div[class*="text-"]');	
 
@@ -92,23 +107,57 @@ function insertNewPanel() {
 	mainContent.classList.add("widgetbar-page");
 	mainContent.innerHTML = `
 		<div>
-			<h1>Choose Accounts	</h1>
+			<h1>Choose Account	</h1>
 		</div>
-		<div class="widget-X9EuSe_t widgetbar-widget widgetbar-widget-alerts_manage">
-			<div class="widgetHeader-X9EuSe_t">
-				<span>Market</span>
-				<input></input>
-				<div>
-					<button>Buy</button>
-					<button>Sell</button>
-				</div>
+		<div>
+			<div class="row" style="padding: 5px; margin: 5px">
+					<span style="text-align: center;">Market</span>
+					<span<input type="text" class="form-control" placeholder="Limit"></span>
 			</div>
-			<div class="widgetbar-widgetbody" style="height: 411px;"></div>
-			<div class="widgetbar-widgethandle" style="touch-action: none;"></div>
-		</div>
-		<div class="widget-X9EuSe_t widgetbar-widget widgetbar-widget-alerts_log">
-			<div class="widgetHeader-X9EuSe_t"></div><div class="widgetbar-widgetbody" style="height: 410px;"></div>
-			<div class="widgetbar-widgethandle" style="touch-action: none;"></div>
+			<div class="widgetbar-widgetbody" style="height: 411px; padding: 5px; margin: 5px;">	
+			
+				<div class="row" style="padding: 5px; margin:5px;">
+					<button class="btn bg-info col-sm-6" style="color:white;">Buy</button>
+					<button class="btn col-sm-6" style="color: white; background-color: #222222;">Sell</button>
+				</div>
+				<div style="padding: 5px; margin:5px; display:flex; flex-direction: column;">
+					<span>Available</span>
+					<span>0.0000USDT</span>
+				</div>
+				<div style="padding: 5px; margin:5px; width: 100%">
+					<button class="btn" style="color: white; background-color: #999999;">Best Market Price</button>
+				</div>
+				<div class="input-group mb-3 input-group-sm" style="padding: 5px; margin:5px; width: 100%;">
+					<input type="text" class="form-control">
+					<span class="input-group-text">BTC</span>
+				</div>
+
+				<div style="padding: 5px; margin:5px;">
+					<div class="step active" id="step1">
+						<h2>Step 1</h2>
+						<input type="text" placeholder="Enter something">
+						<button onclick="nextStep()">Next</button>
+					</div>
+				</div>
+				<div style="padding: 5px; margin:5px;">
+					<div>
+						<span>Taker Fees (0.002%)</span>
+						<span>0.0000 BTC</span>
+					</div>
+					
+					<div>
+						<span>Total (excel. fees) </span>
+						<span>0.0000 BTC</span>
+					</div>
+					
+					<div>
+						<span>Cost</span>
+						<span>0.0000 BSDT</span>
+					</div>
+				</div>
+				<button class="btn bg-info" style="color: white; margin:5px padding: 5px; width: 100%">Buy</button>
+
+			</div>
 		</div>
 	`;
 	floatingpanel.insertBefore(mainContent, floatingpanel.firstChild);
@@ -236,5 +285,37 @@ function dragElement(element) {
 	});
 }
 
+var currentStep = 0;
+var steps = document.querySelectorAll('.step');
 
+function showStep(stepIndex) {
+	steps.forEach(function(step, index) {
+		if (index === stepIndex) {
+			step.classList.add('active');
+		} else {
+			step.classList.remove('active');
+		}
+	});
+}
+
+function nextStep() {
+	if (currentStep < steps.length - 1) {
+		currentStep++;
+		showStep(currentStep);
+	}
+}
+
+function prevStep() {
+	if (currentStep > 0) {
+		currentStep--;
+		showStep(currentStep);
+	}
+}
+
+function submitForm() {
+	// Implement your form submission logic here
+	alert('Form submitted!');
+}
+
+showStep(currentStep);
 
