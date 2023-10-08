@@ -110,9 +110,9 @@ function insertNewPanel() {
 			<h1>Choose Account	</h1>
 		</div>
 		<div>
-			<div class="row" style="padding: 5px; margin: 5px">
-					<span style="text-align: center;">Market</span>
-					<span<input type="text" class="form-control" placeholder="Limit"></span>
+			<div style="padding: 5px; margin: 5px">
+				<span style="text-align: center;">Market</span>
+				<span><input type="text" class="form-control" placeholder="Limit"></span>
 			</div>
 			<div class="widgetbar-widgetbody" style="height: 411px; padding: 5px; margin: 5px;">	
 			
