@@ -106,30 +106,42 @@ function insertNewPanel() {
 	var mainContent = document.createElement("div");
 	mainContent.classList.add("widgetbar-page");
 	mainContent.innerHTML = `
-		<div>
-			<h1>Choose Account	</h1>
+		<div style="padding: 15px;
+					margin: 5px;
+					text-transform: uppercase;
+		">
+			<h3>Choose Account	</h3>
 		</div>
 		<div>
-			<div style="padding: 5px; margin: 5px">
-				<span style="text-align: center;">Market</span>
-				<span><input type="text" class="form-control" placeholder="Limit"></span>
+			<div style="padding: 15px; margin: 5px">
+				<span style="text-align: center; padding-right:15px; ">Market</span>
+				<input type="text" style="width: 80%; border-radius: 5px; color: white; background-color: #2a3e4f;" placeholder="Limit">
 			</div>
-			<div class="widgetbar-widgetbody" style="height: 411px; padding: 5px; margin: 5px;">	
+			<div style="height: 411px; padding: 5px; margin: 5px;">	
 			
 				<div class="row" style="padding: 5px; margin:5px;">
 					<button class="btn bg-info col-sm-6" style="color:white;">Buy</button>
 					<button class="btn col-sm-6" style="color: white; background-color: #222222;">Sell</button>
 				</div>
-				<div style="padding: 5px; margin:5px; display:flex; flex-direction: column;">
-					<span>Available</span>
-					<span>0.0000USDT</span>
+				<div style="padding: 5px; margin:5px;">
+					<span >Available</span>
+					<span style="text-align: right;	float: right; ">0.0000USDT</span>
 				</div>
 				<div style="padding: 5px; margin:5px; width: 100%">
-					<button class="btn" style="color: white; background-color: #999999;">Best Market Price</button>
+					<button class="btn" style="color: white; background-color: #2a3e4f; width: 100%; ">Best Market Price</button>
 				</div>
-				<div class="input-group mb-3 input-group-sm" style="padding: 5px; margin:5px; width: 100%;">
-					<input type="text" class="form-control">
-					<span class="input-group-text">BTC</span>
+				<div class="input-group mb-3 input-group-sm" style="padding: 5px; margin:5px; width: 100%; color: white;" placeholder="0">
+					<input type="text" class="form-control" style="color: white;
+															background: transparent;
+															border-color: darkblue;"
+															
+					>
+					<span class="input-group-text" style="color: white;
+															background: transparent;
+															border-color: darkblue;"
+					>
+						BTC
+					</span>
 				</div>
 
 				<div style="padding: 5px; margin:5px;">
@@ -141,21 +153,23 @@ function insertNewPanel() {
 				</div>
 				<div style="padding: 5px; margin:5px;">
 					<div>
-						<span>Taker Fees (0.002%)</span>
-						<span>0.0000 BTC</span>
+						<span >Taker Fees (0.002%)</span>
+						<span style="text-align: right;	float: right; ">0.0000 BTC</span>
 					</div>
 					
 					<div>
 						<span>Total (excel. fees) </span>
-						<span>0.0000 BTC</span>
+						<span style="text-align: right;	float: right; ">0.0000 BTC</span>
 					</div>
 					
 					<div>
 						<span>Cost</span>
-						<span>0.0000 BSDT</span>
+						<span style="text-align: right;	float: right; ">0.0000 BSDT</span>
 					</div>
 				</div>
-				<button class="btn bg-info" style="color: white; margin:5px padding: 5px; width: 100%">Buy</button>
+				<div style="padding: 5px; margin:5px;">
+					<button class="btn bg-info" style="color: white; width: 100%">Buy</button>
+				</div>
 
 			</div>
 		</div>
